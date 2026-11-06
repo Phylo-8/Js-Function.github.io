@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<input type="text" id="demo1" placeholder="Enter 1st Number" style="padding:0.5%;">
+		<input type="text" id="demo2" placeholder="Enter 2nd Number" style="padding:0.5%;">
+		<input type="text" id="Answer" placeholder="Answer" style="padding:0.5%;">
+
+		<br><br>
+
+		<button type="button" onclick=" calc('+') " style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:7%;">
+			Add                        
+		</button>                      
+		<button type="button" onclick=" calc('-') " style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Subtract                   
+		</button>                      
+		<button type="button" onclick=" calc('*') " style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Multiply                   
+		</button>                      
+		<button type="button" onclick=" calc('/') " style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Divide
+		</button>
+		<script>
+		
+			function calc(sum)
+			{
+				var a = document.getElementById('demo1').value;
+				var b = document.getElementById('demo2').value;
+			
+				if(sum == '+')
+				{
+					document.getElementById('Answer').value = a + b;
+				}
+				else if(sum == '-')
+				{
+					document.getElementById('Answer').value = a - b;
+				}
+				else if(sum == '*')
+				{
+					document.getElementById('Answer').value = a * b;
+				}
+				else if(sum == '/')
+				{
+					document.getElementById('Answer').value = a / b;
+				}
+			}	
+		</script>
+	</body>
+</html>

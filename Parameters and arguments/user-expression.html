@@ -1,0 +1,134 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+    </head>
+
+    <body>
+
+        <input type="text" id="value" placeholder="Enter some expression" style="padding:0.5%; font-size:16px;">
+
+        <br><br>
+
+        <button onclick="calc()">Click me</button>
+
+        <br>
+
+        <div id="ans"></div>
+
+        <script>
+
+            function calc(exp, i, num, total, term, sign, op)
+            {
+                if(exp == undefined)
+                {
+                    exp = document.getElementById('value').value;
+
+                    i = 0;
+                    num = "";
+                    total = 0;
+                    term = 0;
+                    sign = 1;
+                    op = "+";
+
+                    if(exp == "")
+                    {
+                        document.getElementById('ans').innerHTML = "Enter expression";
+                        return;
+                    }
+
+                    var result = calc(exp, i, num, total, term, sign, op);
+
+                    document.getElementById('ans').innerHTML = result;
+
+                    return result;
+                }
+
+                if(i < exp.length)
+                {
+                    if((exp[i] >= "0" && exp[i] <= "9") || exp[i] == ".")
+                    {
+                        num = num + exp[i];
+
+                        i++;
+
+                        return calc(exp, i, num, total, term, sign, op);
+                    }
+
+                    else if(exp[i] == "+" || exp[i] == "-" || exp[i] == "*" || exp[i] == "/")
+                    {
+                        var n = num * 1;
+
+                        if(op == "*")
+                        {
+                            term = term * n;
+                        }
+
+                        else if(op == "/")
+                        {
+                            term = term / n;
+                        }
+
+                        else
+                        {
+                            total = total + (sign * term);
+
+                            term = n;
+
+                            if(op == "+")
+                            {
+                                sign = 1;
+                            }
+
+                            else
+                            {
+                                sign = -1;
+                            }
+                        }
+
+                        op = exp[i];
+
+                        num = "";
+
+                        i++;
+
+                        return calc(exp, i, num, total, term, sign, op);
+                    }
+                }
+
+                var n = num * 1;
+
+                if(op == "*")
+                {
+                    term = term * n;
+                }
+
+                else if(op == "/")
+                {
+                    term = term / n;
+                }
+
+                else
+                {
+                    total = total + (sign * term);
+
+                    term = n;
+
+                    if(op == "+")
+                    {
+                        sign = 1;
+                    }
+
+                    else
+                    {
+                        sign = -1;
+                    }
+                }
+
+                return total + (sign * term);
+            }
+
+        </script>
+
+    </body>
+</html>

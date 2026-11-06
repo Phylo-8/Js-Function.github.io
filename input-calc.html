@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>
+		</title>
+	</head>
+	<body>
+	
+		<input type="text" id="demo1" placeholder="Enter 1st Number" style="padding:0.5%;">
+		<input type="text" id="demo2" placeholder="Enter 2nd Number" style="padding:0.5%;">
+		
+		<input type="text" id="Answer" placeholder="Answer" style="padding:0.5%;">
+		
+		<br><br>
+		
+		<button type="button" onclick="add()" style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:7%;">
+			Add
+		</button>
+		<button type="button" onclick="sub()" style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Subtract
+		</button>
+		<button type="button" onclick="mlpy()" style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Multiply
+		</button>
+		<button type="button" onclick="dvd()" style="background-color:lightgrey; border:none; padding:0.5%; font-weight:bold; width:10%;">
+			Divide
+		</button>
+		<script>
+				var a = document.getElementById('demo1');
+				var b = document.getElementById('demo2');
+				
+			function add()
+			{    
+				document.getElementById('Answer').value = a.value + b.value;
+			}
+			function sub()
+			{
+				document.getElementById('Answer').value = a.value - b.value;
+			}
+			function mlpy()
+			{
+				document.getElementById('Answer').value = a.value * b.value;
+			}
+			function dvd()
+			{
+				document.getElementById('Answer').value = a.value / b.value;
+			}
+		</script>
+	</body>
+</html>
